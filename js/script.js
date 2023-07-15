@@ -70,6 +70,7 @@ const searchWord = async () => {
       })
       .catch(err => {
         console.log(err);
+        document.getElementById("ovalSpinner").classList.add("hidden");
       });
 
     audio.src = audioSrc;
@@ -93,6 +94,7 @@ const searchWord = async () => {
       } else {
         pauseAudio();
       }
+      playAudio();
     });
   }
 };
