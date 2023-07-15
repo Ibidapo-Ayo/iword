@@ -12,6 +12,7 @@ const searchWord = async () => {
   if (words.value.trim() === "") {
     alert("Enter word...");
   } else {
+    words.value = "";
     document.getElementById("ovalSpinner").classList.remove("hidden");
     await fetch(URL)
       .then(res => res.json())
