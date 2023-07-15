@@ -1,0 +1,11 @@
+html, body {
+    font-family: 'Poppin', sans-serif;
+}
+
+.hide {
+    display: none;
+}
+
+.list-style-type {
+    list-style-type: disc;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Iword Dictory App</title>
+    <link rel="stylesheet" href="./css/output.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="flex flex-col justify-center items-center px-10">
+      <div
+        class="w-100 lg:w-[600px] flex flex-col justify-center items-center h-full px-5 py-5 space-y-6"
+      >
+        <div class="w-full flex flex-row justify-between h-[50px]">
+          <div><i class="bx bx-book text-3xl text-brandColor"></i></div>
+          <div>
+            <select name="" id="fonts" class="text-xl">
+              <option value="serif">Serif</option>
+              <option value="serif">San Serif</option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="w-full flex flex-row items-center justify-between bg-gray-100 h-[50px] rounded-lg px-3"
+        >
+          <form action="#" class="w-4/5 h-[50px] ">
+            <input
+              type="text"
+              class="bg-transparent h-full w-full focus:outline-none focus:border-none"
+              placeholder="Search for words"
+              id="words"
+            />
+          </form>
+
+          <div
+            class="search-icon cursor-pointer w-1/6 h-[50px] flex flex-col items-end justify-center"
+          >
+            <i class="bx bx-search text-brandColor" id="searchBtn"></i>
+          </div>
+        </div>
+
+        <div class="w-full flex flex-row justify-between items-center">
+          <div class="searchWord w-4/6">
+            <h1 class="text-4xl font-bold" id="word"></h1>
+            <p class="text-brandColor" id="phonetics"></p>
+          </div>
+          <div class="audio w-1/4">
+            <div id="playButton">
+              <button
+                class="block w-[50px] h-[50px] bg-brandColor rounded-full flex flex-col items-center justify-center"
+                id="playBtn"
+              >
+                <i class="bx bx-play text-4xl text-white"></i>
+              </button>
+              <button
+                class="hidden w-[50px] h-[50px] bg-brandColor rounded-full flex flex-col items-center justify-center"
+                id="pauseBtn"
+              >
+                <i class="bx bx-pause text-4xl text-white"></i>
+              </button>
+            </div>
+            <audio id="audio" src=""></audio>
+          </div>
+        </div>
+        <div class="flex flex-col justify-start items-start w-full space-y-5">
+          <p id="p_speech" class="font-bold italic text-left"></p>
+          <div id="meaningEl"></div>
+          <div id="synonymsEl" class="mt-5"></div>
+          <div id="sourcesEl" class="mt-5"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  </body>
+</html>
