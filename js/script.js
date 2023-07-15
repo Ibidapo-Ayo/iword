@@ -8,25 +8,33 @@ const searchWord = async () => {
   const pauseIcon = document.getElementById("pauseBtn");
   let audioSrc;
   const URL = `https://api.dictionaryapi.dev/api/v2/entries/en/${words.value}`;
+
   if (words.value.trim() === "") {
     alert("Enter word...");
   } else {
+    document.getElementById("ovalSpinner").classList.remove("hidden");
     await fetch(URL)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        // console.log(data);
+        document.getElementById("ovalSpinner").classList.add("hidden");
 
-        const audio = data[0].phonetics[0].audio;
-        audioSrc = audio;
+        const audio = data[0].phonetics;
+
         const meaning = data[0];
 
-        document.getElementById("word").textContent = meaning.word;
+        const audioFilter = meaning.phonetics.filter(
+          audio => audio.audio !== ""
+        );
 
+        console.log(audioFilter);
+        audioSrc = audioFilter[0].audio;
+
+        document.getElementById("word").textContent = meaning.word; //The title of the searched word
         const phoneticsFilter = meaning.phonetics.filter(
           phonetics => phonetics.text !== undefined
         );
 
-        // console.log(phoneticsFilter);
         document.getElementById("phonetics").textContent =
           phoneticsFilter[0].text;
 
