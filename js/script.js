@@ -1,6 +1,17 @@
 const searchBtn = document.getElementById("searchBtn");
 const words = document.getElementById("words");
-
+const bodyFont = document.getElementById("bodyfont")
+const fonts = document.getElementById("fonts)
+                                      
+  fonts.addEventListener("onchange", ()=>{
+    if(fonts.value === "sanserif"){
+      bodyFont.style.fontFamily = "san-serif"
+    }else if(fonts.value === "serif"){
+      bodyFont.style.fontFamily = "serif"
+    }else{
+      bodyFont.style.fontFamily = "cursive"
+    }
+  }
 const searchWord = async () => {
   const playButton = document.getElementById("playButton");
   const audio = document.getElementById("audio");
