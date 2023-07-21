@@ -101,15 +101,7 @@ const searchWord = async () => {
       playAudio();
     });
   }
-  fonts.addEventListener("onchange", ()=>{
-    if(fonts.value === "sanserif"){
-      bodyFont.style.fontFamily = "san-serif"
-    }else if(fonts.value === "serif"){
-      bodyFont.style.fontFamily = "serif"
-    }else{
-      bodyFont.style.fontFamily = "cursive"
-    }
-  }
+  
 };
 
 searchBtn.addEventListener("click", searchWord);
