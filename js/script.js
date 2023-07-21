@@ -1,7 +1,7 @@
 const searchBtn = document.getElementById("searchBtn");
 const words = document.getElementById("words");
 const bodyFont = document.getElementById("bodyfont")
-const fonts = document.getElementById("fonts)
+const fonts = document.getElementById("fonts")
                                       
   
 const searchWord = async () => {
