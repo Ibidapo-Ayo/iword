@@ -90,5 +90,18 @@
 
     <script src="./js/script.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script>
+      const bodyFont = document.getElementById("bodyfont");
+      const fonts = document.getElementById("fonts")
+      fonts.addEventListener("onchange", ()=>{
+    if(fonts.value === "sanserif"){
+      bodyFont.style.fontFamily = "sans-serif";
+    }else if(fonts.value === "serif"){
+      bodyFont.style.fontFamily = "serif"
+    }else{
+      bodyFont.style.fontFamily = "cursive"
+    }
+  }
+    </script>
   </body>
 </html>
