@@ -6,6 +6,8 @@ const searchWord = async () => {
   const audio = document.getElementById("audio");
   const playIcon = document.getElementById("playBtn");
   const pauseIcon = document.getElementById("pauseBtn");
+  const fonts = document.getElementById("fonts");
+  let bodyfont = document.getElementById("bodyfont");
   let audioSrc;
   const URL = `https://api.dictionaryapi.dev/api/v2/entries/en/${words.value}`;
 
@@ -95,6 +97,11 @@ const searchWord = async () => {
         pauseAudio();
       }
       playAudio();
+    });
+
+    fonts.addEventListener("change", () => {
+      console.log(fonts.value);
+      bodyfont.style.fontFamily = fonts.value;
     });
   }
 };
