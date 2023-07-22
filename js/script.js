@@ -1,9 +1,6 @@
 const searchBtn = document.getElementById("searchBtn");
 const words = document.getElementById("words");
-const bodyFont = document.getElementById("bodyfont")
-const fonts = document.getElementById("fonts")
-                                      
-  
+
 const searchWord = async () => {
   const playButton = document.getElementById("playButton");
   const audio = document.getElementById("audio");
@@ -30,8 +27,6 @@ const searchWord = async () => {
         const audioFilter = meaning.phonetics.filter(
           audio => audio.audio !== ""
         );
-
-        console.log(audioFilter);
         audioSrc = audioFilter[0].audio;
 
         document.getElementById("word").textContent = meaning.word; //The title of the searched word
@@ -44,17 +39,18 @@ const searchWord = async () => {
 
         const wordMeaning = meaning.meanings
           .map(means => {
-            return `${means.definitions.map(means2 => {
-              return `
+            return `${means.definitions
+              .map(means2 => {
+                return `
               <ul id="meaning" class="list-style-type"><li>${means2.definition}</li></ul>
               `;
-            })} 
+              })
+              .join("")} 
         <p class="text-gray-600 mt-5">Synonyms</p>
         <p id="synonyms" class="font-bold italic">${means.partOfSpeech}</p>
         `;
           })
           .join("");
-
         document.getElementById("meaningEl").innerHTML = `
       <p class="text-gray-600" id="meaningTitle">Meaning</p>
       ${wordMeaning}
@@ -101,7 +97,6 @@ const searchWord = async () => {
       playAudio();
     });
   }
-  
 };
 
 searchBtn.addEventListener("click", searchWord);

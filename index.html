@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
   </head>
-  <body id="bodyfont">
+  <body>
     <div class="flex flex-col justify-center items-center px-10">
       <div
         class="w-100 lg:w-[600px] flex flex-col justify-center items-center h-full px-5 py-5 space-y-6"
@@ -22,7 +22,7 @@
           <div>
             <select name="" id="fonts" class="text-xl">
               <option value="serif">Serif</option>
-              <option value="sanserif">San Serif</option>
+              <option value="serif">San Serif</option>
             </select>
           </div>
         </div>
@@ -56,7 +56,7 @@
                 class="block w-[50px] h-[50px] bg-brandColor rounded-full flex flex-col items-center justify-center"
                 id="playBtn"
               >
-                <i class="bx bx-play text-4xl text-white"></i>
+                <i class="bx bx-volume-full text-white text-4xl"></i>
               </button>
               <button
                 class="hidden w-[50px] h-[50px] bg-brandColor rounded-full flex flex-col items-center justify-center"
@@ -90,18 +90,5 @@
 
     <script src="./js/script.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script>
-      const bodyFont = document.getElementById("bodyfont");
-      const fonts = document.getElementById("fonts")
-      fonts.addEventListener("onchange", ()=>{
-    if(fonts.value === "sanserif"){
-      bodyFont.style.fontFamily = "sans-serif";
-    }else if(fonts.value === "serif"){
-      bodyFont.style.fontFamily = "serif"
-    }else{
-      bodyFont.style.fontFamily = "cursive"
-    }
-  }
-    </script>
   </body>
 </html>
